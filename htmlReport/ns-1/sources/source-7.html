@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Quiz</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.Teliko.model</a>
+</div>
+
+<h1>Coverage Summary for Class: Quiz (com.example.Teliko.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Quiz</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    70%
+  </span>
+  <span class="absValue">
+    (14/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (27/45)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.Teliko.model;
+&nbsp;
+&nbsp;public class Quiz {
+&nbsp;
+&nbsp;    private Account player1;
+&nbsp;    private Account player2;
+&nbsp;    private int score1;
+&nbsp;    private int score2;
+&nbsp;    private int time1;
+&nbsp;    private int time2;
+&nbsp;
+<b class="fc">&nbsp;    private QuestionSet questionSet = new QuestionSet();</b>
+<b class="fc">&nbsp;    public Quiz(){}</b>
+<b class="nc">&nbsp;    public Quiz(QuestionSet que, Account acc1, Account acc2){</b>
+<b class="nc">&nbsp;        this.questionSet = que;</b>
+<b class="nc">&nbsp;        this.player1 = acc1;</b>
+<b class="nc">&nbsp;        this.player2 = acc2;</b>
+<b class="nc">&nbsp;        this.score1 = 0;</b>
+<b class="nc">&nbsp;        this.score2 = 0;</b>
+<b class="nc">&nbsp;        this.time1 = 0;</b>
+<b class="nc">&nbsp;        this.time2 = 0;</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setPlayer1(Account player1) {
+<b class="fc">&nbsp;        this.player1 = player1;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setPlayer2(Account player2) {
+<b class="fc">&nbsp;        this.player2 = player2;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setQuestionSet(QuestionSet questionSet) {
+<b class="fc">&nbsp;        this.questionSet = questionSet;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setScore1(int score1) {
+<b class="fc">&nbsp;        this.score1 = score1;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setScore2(int score2) {
+<b class="fc">&nbsp;        this.score2 = score2;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void updateQuestion(QuestionSet que){
+<b class="nc">&nbsp;        this.questionSet = que;</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public Account getPlayer1() {
+<b class="fc">&nbsp;        return player1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Account getPlayer2() {
+<b class="nc">&nbsp;        return player2;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setTime1(int time1) {
+<b class="fc">&nbsp;        this.time1 = time1;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void setTime2(int time2) {
+<b class="fc">&nbsp;        this.time2 = time2;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public int getTime1() {
+<b class="fc">&nbsp;        return time1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getTime2() {
+<b class="nc">&nbsp;        return time2;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void updateScore1(int score){
+<b class="fc">&nbsp;        this.score1 += score;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void updateScore2(int score){
+<b class="nc">&nbsp;        this.score2 += score;</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;    public int getScore1() {
+<b class="fc">&nbsp;        return score1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getScore2() {
+<b class="nc">&nbsp;        return score2;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public QuestionSet getQuestionSet() {
+<b class="fc">&nbsp;        return questionSet;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Account winner(){
+<b class="fc">&nbsp;        int x = score1 / time1;</b>
+<b class="fc">&nbsp;        int y = score2 / time2;</b>
+&nbsp;
+<b class="fc">&nbsp;        if(x &gt; y){</b>
+<b class="nc">&nbsp;            return player1;</b>
+&nbsp;        }else{
+<b class="fc">&nbsp;            if(x==y){</b>
+<b class="nc">&nbsp;                return null;</b>
+&nbsp;            }else {
+<b class="fc">&nbsp;                return player2;</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-04 19:37</div>
+</div>
+</body>
+</html>
